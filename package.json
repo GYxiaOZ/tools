@@ -1,0 +1,48 @@
+{
+  "name": "@gyxiaoz/tools",
+  "version": "0.0.1",
+  "description": "gyxiaoz tools",
+  "repository": "",
+  "author": "gyxiaoz",
+  "main": "dist/index.js",
+  "module": "dist/index.esm.js",
+  "jsnext:main": "dist/index.esm.js",
+  "types": "dist/index.d.ts",
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "rm -rf ./dist && rollup -c",
+    "start": "rollup -c -w",
+    "pub": "yarn build && npm publish --access public",
+    "build:doc": "rimraf ./api.md && node scripts/doc2md.js",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@rollup/plugin-eslint": "^8.0.1",
+    "@types/jest": "^26.0.20",
+    "@typescript-eslint/eslint-plugin": "^4.9.1",
+    "@typescript-eslint/parser": "^4.9.1",
+    "antd": "3",
+    "eslint": "^7.15.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^8.2.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-webpack-plugin": "^2.4.1",
+    "jest": "^26.6.3",
+    "jsdoc-to-markdown": "^7.0.1",
+    "rollup": "^2.41.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-filesize": "^9.1.1",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-terser": "^7.0.2",
+    "rollup-plugin-typescript2": "^0.30.0",
+    "ts-jest": "^26.5.3",
+    "typescript": "^4.2.3"
+  }
+}
