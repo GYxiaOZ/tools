@@ -2,23 +2,24 @@
   "name": "@gyxiaoz/tools",
   "version": "0.0.1",
   "description": "gyxiaoz tools",
-  "repository": "",
+  "repository": "https://github.com/GYxiaOZ/tools",
   "author": "gyxiaoz",
   "main": "dist/index.js",
-  "module": "dist/index.esm.js",
-  "jsnext:main": "dist/index.esm.js",
+  "module": "es/index.js",
+  "jsnext:main": "es/index.js",
   "types": "dist/index.d.ts",
   "publishConfig": {
     "registry": "https://registry.npmjs.org/"
   },
   "files": [
-    "dist"
+    "dist",
+    "es"
   ],
   "scripts": {
-    "build": "rm -rf ./dist && rollup -c",
+    "build": "npx rimraf ./dist && rollup -c",
     "start": "rollup -c -w",
     "pub": "yarn build && npm publish --access public",
-    "build:doc": "rimraf ./api.md && node scripts/doc2md.js",
+    "doc": "npx rimraf ./api.md && node scripts/doc2md.js",
     "test": "jest"
   },
   "devDependencies": {
@@ -35,6 +36,7 @@
     "eslint-webpack-plugin": "^2.4.1",
     "jest": "^26.6.3",
     "jsdoc-to-markdown": "^7.0.1",
+    "rimraf": "^3.0.2",
     "rollup": "^2.41.0",
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-filesize": "^9.1.1",
@@ -44,5 +46,8 @@
     "rollup-plugin-typescript2": "^0.30.0",
     "ts-jest": "^26.5.3",
     "typescript": "^4.2.3"
+  },
+  "dependencies": {
+    "decimal.js-light": "^2.5.1"
   }
 }

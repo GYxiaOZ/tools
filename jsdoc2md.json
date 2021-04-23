@@ -1,6 +1,6 @@
 {
   "source": {
-    "include": ["es"],
+    "include": ["dist/index.js"],
     "includePattern": ".+\\.js(x)?$",
     "excludePattern": ".+\\.d.ts"
   },
