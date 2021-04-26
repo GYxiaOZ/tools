@@ -5,7 +5,7 @@
 <dd><p>加法</p></dd>
 <dt><a href="#divide">divide(dividend, divisor)</a> ⇒ <code>string</code></dt>
 <dd><p>除法</p></dd>
-<dt><a href="#fixed">fixed(handle, fixedNum)</a> ⇒ <code>string</code></dt>
+<dt><a href="#fixed">fixed(handle, [fixedNum])</a> ⇒ <code>string</code></dt>
 <dd><p>数字字符串 四舍五入</p></dd>
 <dt><a href="#gt">gt(vala, valb)</a> ⇒ <code>boolean</code></dt>
 <dd><p>字符串数字 大于</p></dd>
@@ -21,6 +21,8 @@
 <dd><p>安全解析JSON</p></dd>
 <dt><a href="#parseSearch">parseSearch(searchStr)</a> ⇒ <code>StringObject</code></dt>
 <dd><p>解析 search</p></dd>
+<dt><a href="#subtract">subtract(minuend, subtrahend)</a> ⇒ <code>string</code></dt>
+<dd><p>减法</p></dd>
 </dl>
 
 <a name="add"></a>
@@ -32,8 +34,8 @@
 
 | Param | Type | Description |
 | --- | --- | --- |
-| augend | <code>string</code> | <p>被加数</p> |
-| addend | <code>string</code> | <p>加数</p> |
+| augend | <code>string</code> \| <code>number</code> | <p>被加数</p> |
+| addend | <code>string</code> \| <code>number</code> | <p>加数</p> |
 
 **Example**  
 ```js
@@ -48,8 +50,8 @@ add('1.1','1.8')// => '2.9'
 
 | Param | Type | Description |
 | --- | --- | --- |
-| dividend | <code>string</code> | <p>被除数</p> |
-| divisor | <code>string</code> | <p>除数</p> |
+| dividend | <code>string</code> \| <code>number</code> | <p>被除数</p> |
+| divisor | <code>string</code> \| <code>number</code> | <p>除数</p> |
 
 **Example**  
 ```js
@@ -57,15 +59,15 @@ divide('1.21','1.1')// => '1.1'
 ```
 <a name="fixed"></a>
 
-## fixed(handle, fixedNum) ⇒ <code>string</code>
+## fixed(handle, [fixedNum]) ⇒ <code>string</code>
 <p>数字字符串 四舍五入</p>
 
 **Kind**: global function  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| handle | <code>string</code> | <p>待处理值</p> |
-| fixedNum | <code>number</code> | <p>保留位数</p> |
+| handle | <code>string</code> \| <code>number</code> | <p>待处理值</p> |
+| [fixedNum] | <code>number</code> | <p>保留位数</p> |
 
 **Example**  
 ```js
@@ -84,8 +86,8 @@ fixed('3.456',5)// => '3.45600'
 
 | Param | Type |
 | --- | --- |
-| vala | <code>string</code> | 
-| valb | <code>string</code> | 
+| vala | <code>string</code> \| <code>number</code> | 
+| valb | <code>string</code> \| <code>number</code> | 
 
 **Example**  
 ```js
@@ -104,8 +106,8 @@ gt('1.2','1.3')// => false
 
 | Param | Type |
 | --- | --- |
-| vala | <code>string</code> | 
-| valb | <code>string</code> | 
+| vala | <code>string</code> \| <code>number</code> | 
+| valb | <code>string</code> \| <code>number</code> | 
 
 **Example**  
 ```js
@@ -124,8 +126,8 @@ gte('1.2','1.3')// => false
 
 | Param | Type |
 | --- | --- |
-| vala | <code>string</code> | 
-| valb | <code>string</code> | 
+| vala | <code>string</code> \| <code>number</code> | 
+| valb | <code>string</code> \| <code>number</code> | 
 
 **Example**  
 ```js
@@ -148,8 +150,8 @@ lt('1.1','1.2')// => true
 
 | Param | Type |
 | --- | --- |
-| vala | <code>string</code> | 
-| valb | <code>string</code> | 
+| vala | <code>string</code> \| <code>number</code> | 
+| valb | <code>string</code> \| <code>number</code> | 
 
 **Example**  
 ```js
@@ -172,8 +174,8 @@ lte('1.1','1.2')// => true
 
 | Param | Type | Description |
 | --- | --- | --- |
-| multiplier | <code>string</code> | <p>被乘数</p> |
-| multiplicand | <code>string</code> | <p>乘数</p> |
+| multiplier | <code>string</code> \| <code>number</code> | <p>被乘数</p> |
+| multiplicand | <code>string</code> \| <code>number</code> | <p>乘数</p> |
 
 **Example**  
 ```js
@@ -213,4 +215,20 @@ parseSearch('')// => {}
 **Example**  
 ```js
 parseSearch('?name=kangkang&age=12')// => {name: "kangkang", age: "12"}
+```
+<a name="subtract"></a>
+
+## subtract(minuend, subtrahend) ⇒ <code>string</code>
+<p>减法</p>
+
+**Kind**: global function  
+
+| Param | Type | Description |
+| --- | --- | --- |
+| minuend | <code>string</code> \| <code>number</code> | <p>被减数</p> |
+| subtrahend | <code>string</code> \| <code>number</code> | <p>减数</p> |
+
+**Example**  
+```js
+subtract('2.9','1.1')// => '1.8'
 ```

@@ -3,8 +3,8 @@ import { Decimal } from 'decimal.js-light';
 /**
  * 小于
  * @function
- * @param {string} vala
- * @param {string} valb
+ * @param {string|number} vala
+ * @param {string|number} valb
  * @example
  * lt('1.1','1.0')
  * // => false
@@ -16,6 +16,6 @@ import { Decimal } from 'decimal.js-light';
  * // => true
  * @returns {boolean}
  */
-const lt = (vala: string, valb: string) => new Decimal(vala).lt(valb);
+const lt = (vala: string | number, valb: string | number) => new Decimal(vala).lt(valb);
 
 export default lt;

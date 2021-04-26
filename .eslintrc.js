@@ -9,5 +9,6 @@ module.exports = {
     'import/no-unresolved': 'off',
     'import/extensions': 'off',
     'array-callback-return': 'off',
+    'import/prefer-default-export': 'off',
   },
 };

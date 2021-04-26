@@ -3,8 +3,8 @@ import { Decimal } from 'decimal.js-light';
 /**
  * 字符串数字 大于
  * @function
- * @param {string} vala
- * @param {string} valb
+ * @param {string|number} vala
+ * @param {string|number} valb
  * @example
  * gt('1.2','1.1')
  * // => true
@@ -13,6 +13,6 @@ import { Decimal } from 'decimal.js-light';
  * // => false
  * @returns {boolean}
  */
-const gt = (vala: string, valb: string) => new Decimal(vala).gt(valb);
+const gt = (vala: string | number, valb: string | number) => new Decimal(vala).gt(valb);
 
 export default gt;
